@@ -62,7 +62,7 @@ To view function executions:
 npx taskvalve functions executions <-n 10> <-f>
 ```
 
-## Secrets:   
+## Secrets
 To list all secrets:
 
 ```bash
