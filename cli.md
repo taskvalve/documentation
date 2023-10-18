@@ -4,10 +4,6 @@ layout: default
 nav_order: 2
 ---
 
-Based on the provided source code, I'll enhance the documentation to provide more detailed explanations and clarity. Here's an improved version:
-
----
-
 ## CLI Application Documentation
 
 ### Table of Contents
