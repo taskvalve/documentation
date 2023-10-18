@@ -4,7 +4,9 @@ layout: default
 nav_order: 4
 ---
 
-This library provides functionalities related to models and queues, specifically for MySQL, PostgreSQL, and Redis. It also includes cryptographic functionalities and command creation functionalities.
+# TypeScript Library Documentation
+
+This library provides the ability to start and signal workflows from TypeScript.
 
 # Usage
 
