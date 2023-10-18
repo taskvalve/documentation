@@ -8,9 +8,7 @@ nav_order: 4
 
 This library provides the ability to start and signal workflows from TypeScript.
 
-# Usage
-
-## Configuration
+# Configuration
 
 The library encrypts workflow data and queued jobs in order to push them to Laravel and therefore needs access to your `APP_NAME` and `APP_KEY` from your Laravel configuration.
 
@@ -22,7 +20,7 @@ The library supports stored workflow models in MySQL, Redis, and PostgreSQL.
 
 The library supports queues for MySQL, Redis, and PostgreSQL.
 
-## Setup
+# Usage
 
 ```typescript
 import * as taskvalve from "https://deno.land/x/taskvalve@1.0.4/mod.ts"
