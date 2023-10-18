@@ -6,7 +6,7 @@ nav_order: 2
 
 ## CLI Application Documentation
 
-This documentation provides a comprehensive guide on how to use the `taskvalve` Command Line Interface (CLI). 
+This documentation provides a comprehensive guide on how to use the `taskvalve` Command Line Interface (CLI). The CLI allows you to manage and deploy your functions as well as view logs.
 
 ### Table of Contents
 
