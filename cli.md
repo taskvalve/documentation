@@ -4,78 +4,127 @@ layout: default
 nav_order: 2
 ---
 
-# Usage
+Based on the provided source code, I'll enhance the documentation to provide more detailed explanations and clarity. Here's an improved version:
 
-## Login
+---
+
+## CLI Application Documentation
+
+### Table of Contents
+
+1. [Usage](#usage)
+   * [Login](#login)
+   * [Functions](#functions)
+   * [Secrets](#secrets)
+
+### Usage
+
+This documentation provides a comprehensive guide on how to use the `taskvalve` Command Line Interface (CLI). 
+
+#### Login
+
+Before performing any operations, you need to login:
 
 ```bash
 npx taskvalve login
 ```
 
-## Functions
+You'll be prompted to enter your credentials. Upon successful login, you will be authenticated to execute other commands.
 
-To list all functions:
+#### Functions
+
+Functions are the main units of execution within the `taskvalve` environment. Here's how you can manage them:
+
+**1. List All Functions:**
 
 ```bash
 npx taskvalve functions list
 ```
 
-To create a new function:
+This command displays a list of all your existing functions.
+
+**2. Create a New Function:**
 
 ```bash
 npx taskvalve functions new <name>
 ```
 
-To deploy a function:
+Replace `<name>` with your desired function name.
+
+**3. Deploy a Function:**
+
+After writing your function, you'll need to deploy it:
 
 ```bash
 npx taskvalve functions deploy <name>
 ```
 
-To remove a function:
+**4. Remove a Function:**
+
+To delete a function:
 
 ```bash
 npx taskvalve functions remove <name>
 ```
 
-To run a function:
+**5. Execute a Function:**
+
+You can run a function with optional arguments:
 
 ```bash
 npx taskvalve functions run <name> <arg1> <arg2> ...
 ```
 
-To set authentication for a function endpoint:
+**6. Authentication for Function Endpoint:**
+
+Toggle authentication for a function's endpoint:
 
 ```bash
 npx taskvalve functions authentication <name> <true|false>
 ```
 
-To view function logs:
+`<true|false>` will either enable or disable authentication.
+
+**7. View Function Logs:**
+
+Check logs for debugging or monitoring:
 
 ```bash
-npx taskvalve functions logs <-n 10> <-f>
+npx taskvalve functions logs [-n 10] [-f]
 ```
 
-To view function executions:
+- `-n 10` will display the last 10 logs. Replace 10 with any other number as required.
+- `-f` enables you to tail or follow the logs in real-time.
+
+**8. View Function Executions:**
+
+Inspect previous executions:
 
 ```bash
-npx taskvalve functions executions <-n 10> <-f>
+npx taskvalve functions executions [-n 10] [-f]
 ```
 
-## Secrets
-To list all secrets:
+#### Secrets
+
+Secrets allow you to store sensitive data securely:
+
+**1. List All Secrets:**
 
 ```bash
 npx taskvalve secrets list
 ```
 
-To set a secret:
+**2. Set a Secret:**
+
+Store a new secret or update an existing one:
 
 ```bash
 npx taskvalve secrets set <key> <value>
 ```
 
-To remove a secret:
+**3. Remove a Secret:**
+
+If a secret is no longer needed:
 
 ```bash
 npx taskvalve secrets remove <key>
