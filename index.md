@@ -11,6 +11,6 @@ Here you will find comprehensive guides on:
 - [CLI Application](/cli)
 - [PHP Library](/PHP)
 - [TypeScript Library](/library)
-- [REST](/api)
+- [REST API](/api)
 
 Let's get started!
