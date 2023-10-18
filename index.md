@@ -1,5 +1,5 @@
 ---
-title: TaskValve Documentation
+title: Home
 layout: home
 ---
 
