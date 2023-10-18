@@ -6,3 +6,5 @@ url: https://taskvalve.github.io/documentation
 
 aux_links: # remove if you don't want this link to appear on your pages
   Template Repository: https://github.com/taskvalve/documentation
+
+color_scheme: dark
