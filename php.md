@@ -140,4 +140,27 @@ export default CORS(async (request) => {
 })
 ```
 
+### OpenAI
+
+```
+import { OpenAI } from "https://deno.land/x/openai/mod.ts";
+
+const openAI = new OpenAI(Deno.env.get('OPENAI_API_KEY'))
+
+export default async (request) => {
+    const content = await request.json()
+    const completion = await openAI.createChatCompletion({
+        model: 'gpt-3.5-turbo',
+        messages: [
+            { 'role': 'system', 'content': 'You are a helpful assistant.' },
+            { 'role': 'user', 'content': `Generate a title for this text document: "${content.prompt}"` },
+        ],
+    })
+
+    return new Response(JSON.stringify({ completion: completion.choices[0].message.content }), {
+        headers: { 'content-type': 'application/json' }
+    })
+}
+```
+
 For more details on handling requests and responses with cloud functions, refer to the [Fetch API documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
