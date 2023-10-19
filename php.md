@@ -74,9 +74,9 @@ The TypeScript cloud functions need to be constructed to handle HTTP requests an
 
 ```typescript
 export default async (request) => {
-    return new Response(JSON.stringify({ data: ['test'] }), { 
+    return new Response(JSON.stringify({ data: 'test' }), { 
         headers: { 'content-type': 'application/json' }
-    });
+    })
 }
 ```
 
@@ -105,6 +105,39 @@ export default async (request) => {
         success: true
     }), { headers: { 'Content-Type': 'application/json' } })
 }
+```
+
+### CORS
+
+```
+const CORS = (cb: (request: any) => Promise<Response>) => {
+    const headers = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Expose-Headers': 'Content-Length',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, Accept, Accept-Language',
+    }
+
+    return async (request) => {
+        if (request.method === 'OPTIONS') {
+            return new Response('ok', { headers })
+        }
+
+        const response = await cb(request)
+
+        Object.entries(headers).forEach(([header, value]) => {
+            response.headers.set(header, value)
+        })
+
+        return response
+    }
+}
+
+export default CORS(async (request) => {
+    return new Response(JSON.stringify({ internalTitle: 'test' }), {
+        headers: { 'content-type': 'application/json', 'x-test-header': 'ok' }
+    })
+})
 ```
 
 For more details on handling requests and responses with cloud functions, refer to the [Fetch API documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
