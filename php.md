@@ -135,7 +135,7 @@ const CORS = (cb: (request: any) => Promise<Response>) => {
 
 export default CORS(async (request) => {
     return new Response(JSON.stringify({ test: 'test' }), {
-        headers: { 'content-type': 'application/json', 'x-test-header': 'ok' }
+        headers: { 'content-type': 'application/json' }
     })
 })
 ```
