@@ -109,7 +109,7 @@ export default async (request) => {
 
 ### CORS
 
-```
+```typescript
 const CORS = (cb: (request: any) => Promise<Response>) => {
     const headers = {
         'Access-Control-Allow-Origin': '*',
