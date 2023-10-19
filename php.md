@@ -80,4 +80,31 @@ export default async (request) => {
 }
 ```
 
+### GitHub Webhook
+
+```typescript
+import { hmac } from "https://deno.land/x/hmac@v2.0.1/mod.ts"
+import { timingSafeEqual } from "https://deno.land/std@0.204.0/crypto/timing_safe_equal.ts"
+
+export default async (request) => {
+    const secret = Deno.env.get('GITHUB_WEBHOOK_SECRET')
+    const signature = request.headers.get('x-hub-signature-256')
+    const hash = hmac('sha256', secret, await request.text())
+
+    const te = new TextEncoder()
+
+    if (!timingSafeEqual(te.encode(signature), te.encode(`sha256=${hash}`))) {
+        throw new Error('Signature verification failed')
+    }
+
+    const event = request.headers.get('x-github-event')
+
+    // process event
+
+    return new Response(JSON.stringify({
+        success: true
+    }), { headers: { 'Content-Type': 'application/json' } })
+}
+```
+
 For more details on handling requests and responses with cloud functions, refer to the [Fetch API documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
