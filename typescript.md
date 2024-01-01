@@ -47,34 +47,34 @@ const workflowId = await workflow.start('App\\Workflows\\Simple\\SimpleWorkflow'
 await workflow.signal(workflowId, 'setReady', [true])
 ```
 
-# Database Queue
+## Database Queue
 
-## MySQL
+#### MySQL
 
 ```typescript
 const model = new taskvalve.model.MySQL(crypto, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
 const queue = new taskvalve.queue.MySQL(crypto, model, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
 ```
 
-## PostgreSQL
+#### PostgreSQL
 
 ```typescript
 const model = new taskvalve.model.PostgreSQL(crypto, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
 const queue = new taskvalve.queue.PostgreSQL(crypto, model, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
 ```
 
-# Redis Queue
+## Redis Queue
 
-## MySQL
+#### MySQL
 
 ```typescript
 const model = new taskvalve.model.MySQL(crypto, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
-const queue = new taskvalve.queue.Redis(crypto, model, env['REDIS_HOST'], env['REDIS_PORT'])
+const queue = new taskvalve.queue.Redis(crypto, model, env['REDIS_HOST'], env['REDIS_PORT'], env['REDIS_USER'], env['REDIS_PASS'])
 ```
 
-## PostgreSQL
+#### PostgreSQL
 
 ```typescript
 const model = new taskvalve.model.PostgreSQL(crypto, env['DB_HOST'], env['DB_PORT'], env['DB_NAME'], env['DB_USER'], env['DB_PASS'])
-const queue = new taskvalve.queue.Redis(crypto, model, env['REDIS_HOST'], env['REDIS_PORT'])
+const queue = new taskvalve.queue.Redis(crypto, model, env['REDIS_HOST'], env['REDIS_PORT'], env['REDIS_USER'], env['REDIS_PASS'])
 ```
