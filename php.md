@@ -142,7 +142,7 @@ export default CORS(async (request) => {
 
 ### OpenAI
 
-```
+```typescript
 import { OpenAI } from "https://deno.land/x/openai/mod.ts";
 
 const openAI = new OpenAI(Deno.env.get('OPENAI_API_KEY'))
