@@ -11,7 +11,7 @@ Welcome to TaskValve's official documentation. TaskValve is a middleware SaaS pl
 Here you will find comprehensive guides on:
 
 - [CLI Application](/cli)
-- [PHP Library](/PHP)
+- [PHP Library](/php)
 - [TypeScript Library](/library)
 - [REST API](/api)
 
