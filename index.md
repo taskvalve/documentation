@@ -12,7 +12,7 @@ Here you will find comprehensive guides on:
 
 - [CLI Application](/cli)
 - [PHP Library](/php)
-- [TypeScript Library](/library)
+- [TypeScript Library](/typescript)
 - [REST API](/api)
 
 Let's get started!
